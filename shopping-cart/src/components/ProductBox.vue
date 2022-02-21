@@ -1,11 +1,12 @@
 <template>
-  <div class="product-box">
+  <div class="product-box" @click="redirectProduct(id)">
         <div class="image-box">
             <img :src="parseImgPath(img_path)">
         </div>
         <h4>{{brand}} <small>{{category}}</small></h4>
         <h3>{{name}}</h3>
         <p>售價: {{ price }}</p>
+        <slot></slot>
     </div>
 </template>>
 
@@ -17,6 +18,7 @@
       }
     },
     props: {
+      'id': Number,
       'img_path': String,
       'brand': String,
       'category': String,
@@ -26,6 +28,9 @@
     methods: {
       parseImgPath: function(path) {
         return this.serverPath + path;
+      },
+      redirectProduct: function(id) {
+        this.$router.push(`/products/${id}`)
       }
     }
   }
@@ -41,6 +46,7 @@
     margin: 20px;
     cursor: pointer;
     display: block;
+    padding: 20px 0;
   }
   .image-box {
     border-bottom: 1px solid #ccc;

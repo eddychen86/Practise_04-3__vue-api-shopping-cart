@@ -3,7 +3,6 @@
     <router-link to="/products">產品清單</router-link> |
     <router-link to="/checkout">結帳(共有 0 商品)</router-link>
   </div>
-  <router-view/>
 </template>
 
 <script>
