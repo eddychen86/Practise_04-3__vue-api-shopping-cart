@@ -1,11 +1,20 @@
 import { createStore } from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
 export default createStore({
   state: {
     serverPath: 'http://35.234.34.149',
     cart: [],
   },
-  getters: {},
+  getters: {
+    currentQuantity(state) {
+      let total = 0;
+      for (var i = 0; i < state.cart.length; i++) {
+        total += state.cart[i].number;
+      }
+      return total;
+    },
+  },
   mutations: {
     addCart(state, data) {
       let isNewProduct = true;
@@ -28,4 +37,5 @@ export default createStore({
   },
   actions: {},
   modules: {},
+  plugins: [createPersistedState()],
 });

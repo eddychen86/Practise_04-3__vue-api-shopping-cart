@@ -54,8 +54,7 @@ export default {
     margin: auto;
   }
   .product-component {
-    width: 50%;
-    max-width: 350px;
+    width: 350px;
     margin: auto;
   }
 </style>>
