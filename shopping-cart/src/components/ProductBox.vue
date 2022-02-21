@@ -54,7 +54,7 @@
     margin: 20px;
     cursor: pointer;
     display: block;
-    padding: 20px 0;
+    padding: 20px auto;
   }
   .image-box {
     border-bottom: 1px solid #ccc;

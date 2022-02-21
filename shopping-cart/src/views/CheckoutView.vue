@@ -22,3 +22,11 @@
     }
   }
 </script>
+
+<style scoped>
+  .row {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+  }
+</style>>
